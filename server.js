@@ -184,8 +184,16 @@ bot.command('listress', ctx => {
   ctx.reply(data.length ? data.join('\n') : 'Belum ada ress.');
 });
 
-bot.launch().then(() => {
-  console.log('🤖 Telegram bot started');
-});
+async function startApp() {
+  try {
+    await bot.launch();
+    console.log('🤖 Telegram bot started');
 
-app.listen(PORT, () => console.log(`🌐 Web server running on http://localhost:${PORT}`));
+    app.listen(PORT, "0.0.0.0", () =>
+      console.log(`🌐 Web server running on 0.0.0.0:${PORT}`)
+    );
+  } catch (err) {
+    console.error('❌ Gagal menjalankan salah satu bagian app!');
+    console.error(err); // Tampilkan detail error-nya
+  }
+}
