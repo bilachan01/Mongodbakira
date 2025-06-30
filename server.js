@@ -188,4 +188,4 @@ bot.launch().then(() => {
   console.log('🤖 Telegram bot started');
 });
 
-app.listen(PORT, "0.0.0.0", () => console.log(`🌐 Web server running on 0.0.0.0:${PORT}`));
+app.listen(PORT, () => console.log(`🌐 Web server running on http://localhost:${PORT}`));
