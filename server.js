@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const { Telegraf } = require('telegraf');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = '7491006105:AAGKfiMbwe52YjenqsNAoz-daw77cMfy8dU';
 const OWNER_ID = 6792723671;
 
